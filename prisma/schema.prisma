@@ -12,7 +12,7 @@ model User {
   login   String   @unique
   email   String   @unique
   profile Profile?
-  resume  Resume[]
+  // resume  Resume[]
   // posts
   // projects
   // messenger
@@ -35,62 +35,74 @@ model Profile {
 
 // <========== RESUME ==========> //
 
-model Resume {
-  id             Int                 @id @default(autoincrement())
-  user           User                @relation(fields: [userId], references: [id])
-  userId         Int
-  nationality    String?
-  moving         ResumeMoving?
-  businessTrip   ResumeBusinessTrip?
-  position       ResumePosition?
-  expirience     ResumeExpirience[]
-  education      ResumeEducation[]
-  skills         ResumeSkill?
-  additionalInfo String?
-}
+// model Resume {
+//   id             Int                 @id @default(autoincrement())
+//   user           User                @relation(fields: [userId], references: [id])
+//   userId         Int
+//   nationality    String?
+//   moving         ResumeMoving?
+//   businessTrip   ResumeBusinessTrip?
+//   position       ResumePosition?
+//   expirience     ResumeExpirience[]
+//   education      ResumeEducation[]
+//   skills         ResumeSkill?
+//   additionalInfo String?
+// }
 
-model ResumePosition {
-  id              Int                 @id @default(autoincrement())
-  resume          Resume              @relation(fields: [resumeId], references: [id])
-  resumeId        Int                 @unique
-  title           String?
-  specializations String[]
-  employment      ResumeEmploymment[]
-  schedule        ResumeSchedule[]
-  salary          Int?
-}
+// model ResumePosition {
+//   id              Int                 @id @default(autoincrement())
+//   resume          Resume              @relation(fields: [resumeId], references: [id])
+//   resumeId        Int                 @unique
+//   title           String?
+//   specializations String[]
+//   employment      ResumeEmploymment[]
+//   schedule        ResumeSchedule[]
+//   salary          Int?
+// }
 
-model ResumeExpirience {
-  id          Int       @id @default(autoincrement())
-  resume      Resume    @relation(fields: [resumeId], references: [id])
-  resumeId    Int       @unique
-  startDate   DateTime
-  endDate     DateTime?
-  company     String?
-  site        String?
-  position    String?
-  description String?
-}
+// model ResumeExpirience {
+//   id          Int       @id @default(autoincrement())
+//   resume      Resume    @relation(fields: [resumeId], references: [id])
+//   resumeId    Int       @unique
+//   startDate   DateTime
+//   endDate     DateTime?
+//   company     String?
+//   site        String?
+//   position    String?
+//   description String?
+// }
 
-model ResumeEducation {
-  id             Int     @id @default(autoincrement())
-  resume         Resume  @relation(fields: [resumeId], references: [id])
-  resumeId       Int     @unique
-  endDate        Int?
-  degree         String?
-  institution    String?
-  specialization String?
-}
+// model ResumeEducation {
+//   id             Int     @id @default(autoincrement())
+//   resume         Resume  @relation(fields: [resumeId], references: [id])
+//   resumeId       Int     @unique
+//   endDate        Int?
+//   degree         String?
+//   institution    String?
+//   specialization String?
+// }
 
-model ResumeSkill {
-  id         Int      @id @default(autoincrement())
-  resume     Resume   @relation(fields: [resumeId], references: [id])
-  resumeId   Int      @unique
-  launguuage String[]
-  skills     String[]
-}
+// model ResumeSkill {
+//   id         Int      @id @default(autoincrement())
+//   resume     Resume   @relation(fields: [resumeId], references: [id])
+//   resumeId   Int      @unique
+//   launguuage String[]
+//   skills     String[]
+// }
 
 // <========== ====== ==========> //
+
+// <========== VACANCY ==========> //
+
+// <========== ======= ==========> //
+
+// <========== COMPANY ==========> //
+
+// <========== ======= ==========> //
+
+// <========== TEST ==========> //
+
+// <========== ==== ==========> //
 
 // <========== POST ==========> //
 
