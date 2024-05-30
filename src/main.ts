@@ -1,9 +1,11 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { version } from '../package.json';
+import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
+
 import { AppModule } from './App.module';
+import { version } from '../package.json';
+import { ConfigSchema } from '@Services/config/ConfigSchema';
 
 async function bootstrap() {
   const logger = new Logger('Bootstrap');
@@ -12,17 +14,20 @@ async function bootstrap() {
   });
 
   const swaggerConfig = new DocumentBuilder()
-    .setTitle('Platform Nest.js template')
-    .setDescription('Template API')
+    .setTitle('IT-Skill Spectrum Backend')
+    .setDescription('IT-Skill Spectrum Backend Service API')
     .setVersion(version)
     .build();
+
+  const config = app.get(ConfigSchema);
+
+  process.env.DATABASE_URL = `postgresql://${config.database.user}:${config.database.password}@${config.database.ip}:${config.database.port}/${config.database.name}`;
+
   const swaggerDocument = SwaggerModule.createDocument(app, swaggerConfig);
   SwaggerModule.setup('api', app, swaggerDocument);
 
-  const port = process.env.PORT || 8080;
-
-  await app.listen(port, '0.0.0.0');
-  logger.log(`Nest template ${version} is ready on port ${port}`);
+  await app.listen(config.port, '0.0.0.0');
+  logger.log(`IT-Skill Spectrum Backend ${version} is ready on port ${config.port}`);
 }
 
 void bootstrap();

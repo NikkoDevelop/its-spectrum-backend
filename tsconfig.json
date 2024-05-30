@@ -5,6 +5,8 @@
     "lib": [
       "ES2021"
     ],
+    "strict": true,
+    "strictPropertyInitialization": false,
     "moduleResolution": "Node",
     "sourceMap": true,
     "outDir": "./dist",
@@ -21,12 +23,13 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "paths": {
-      "@Entities/*": ["src/Entities/*"],
-      "@Infrastructure/*": ["src/Infrastructure/*"],
-      "@Libs/*": ["src/Libs/*"],
-      "@Modules/*": ["src/Modules/*"],
-      "@Utils/*": ["src/Utils/*"],
-      "@ValueObjects/*": ["src/ValueObjects/*"]
+      "@Services/*": ["src/services/*"],
+      "@Entities/*": ["src/entities/*"],
+      "@Infrastructure/*": ["src/infrastructure/*"],
+      "@Libs/*": ["src/libs/*"],
+      "@Modules/*": ["src/modules/*"],
+      "@Utils/*": ["src/utils/*"],
+      "@ValueObjects/*": ["src/valueObjects/*"]
     }
   },
   "exclude": ["**/__mocks__/*"]

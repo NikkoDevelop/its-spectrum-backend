@@ -5,11 +5,11 @@ import { version } from '../package.json';
 export class HealthcheckController {
   @Get('/')
   public async index(): Promise<string> {
-    return Promise.resolve(`Nest template ${version} ready`);
+    return Promise.resolve(`IT-Skill Spectrum Backend ${version} ready`);
   }
 
   @Get('/check/ready')
   public async ready(): Promise<string> {
-    return Promise.resolve(`Nest template ${version} ready`);
+    return Promise.resolve(`IT-Skill Spectrum Backend ${version} ready`);
   }
 }

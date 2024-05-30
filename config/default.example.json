@@ -1,0 +1,14 @@
+{
+  "name": "IT-Skill Spectrum Backend",
+  "port": 8080,
+  "settings": {
+    "cookieSecret": "PUT-YOUR-COOKIE-SECRET-STRING"
+  },
+  "database": {
+    "user": "PUT-YOUR-DATABASE-USER-NAME",
+    "password": "PUT-YOUR-DATABASE-PASSWORD",
+    "ip": "PUT-YOUR-DATABASE-IP",
+    "port": "PUT-YOUR-DATABASE-PORT",
+    "name": "PUT-YOUR-DATABASE-NAME"
+  }
+}

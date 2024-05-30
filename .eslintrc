@@ -33,7 +33,8 @@
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",
     "@typescript-eslint/explicit-function-return-type": "off",
-    "no-console": "error"
+    "no-console": "error",
+    "no-unreachable": "error"
   },
   "ignorePatterns": [
     "node_modules/**/*",
